@@ -1,21 +1,229 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    box-sizing: border-box;
 }
 
 body {
-
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-color: #36393D;
 }
 
-.container {
+body::after {
+    content: '';
+    width: 60vw;
+    height: 200vh;
+    position: fixed;
+    left: -24vw;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, hsl(214, 6%, 25%), hsl(214, 6%, 30%));
+    border-right: 3px solid hsl(214, 6%, 35%);
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+
+.sidebar {
     display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 22vw;
+    z-index: 2;
+    padding: 30px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+.sidebar nav ul li {
+    /* text-align: center; */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 4px;
+}
+
+.sidebar nav ul li a:hover, .sidebar nav ul li.selected a {
+    color: rgba(255, 255, 255, 1);
+    background-color: hsl(350, 74%, 47%);
+    padding-left: 60px;
+    transition: .5s;
+}
+
+.content {
+    position: fixed;
+    width: 78vw;
+    left: 22vw;
     height: 100vh;
+    z-index: 3;
+}
+
+.content {
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-h1 {
+.intro h1.title {
+    font-family: 'Lato', sans-serif;
+    font-size: 6em;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: rgb(249, 247, 237);
+    letter-spacing: -5px;
+}
+
+.intro .slogan {
+    font-family: 'Lato', sans-serif;
     font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 15px;
+    color: rgba(249, 247, 237, 0.6);
+    letter-spacing: -3px;
+    text-align: center;
+}
+
+.intro h1.title:hover {
+}
+
+.intro h1.title span {
+    color: #D01F3C;
+}
+
+.intro .social {
+    font-size: 2em;
+}
+
+.intro .social ul {
+    list-style: none;
+    display: block;
+    text-align: center;
+
+}
+
+.intro .social ul li {
+    display: inline-block;
+
+}
+
+.intro .social ul li a {
+    display: block;
+    padding: 0 5px;
+    color: rgba(249, 247, 237, 0.2);
+}
+
+.intro .social ul li:hover a {
+    color: rgba(249, 247, 237, 1);
+    transition: .5s;
+}
+
+.header {
+    padding: 15px 45px;
+    z-index: 3;
+    position: fixed;
+}
+
+.header h1 {
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 3em;
+    display: inline-block;
+    line-height: 100px;
+}
+
+.header h1 a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header h1 span {
+    color: #D01F3C;
+}
+
+.container {
+    width: 50%;
+}
+
+h2 {
+    color: #fff;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 2em;
+    border-bottom: 1px solid hsl(214, 6%, 30%);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.form-group label span.required {
+    color: hsl(350, 74%, 47%);
+}
+
+.form-group input, .form-group textarea {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    padding: 15px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid hsl(214, 6%, 35%);
+    color: #fff;
+    width: 100%;
+}
+
+.form-group input:focus {
+    font-size: 1em;
+    padding: 15px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid hsl(214, 6%, 55%);
+    color: #fff;
+    width: 100%;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.form-group button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    padding: 15px 50px;
+    outline: none;
+    border: 1px solid hsl(350, 74%, 55%);
+    background-color: hsl(350, 74%, 47%);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: hsl(350, 74%, 52%);
+}
+
+.form-group button:active {
+    background-color: hsl(350, 74%, 42%);
+}
+
+.form-group .error {
+    border: 1px solid hsl(350, 74%, 47%) !important;
 }
